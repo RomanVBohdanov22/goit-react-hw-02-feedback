@@ -1,11 +1,11 @@
 import React from 'react';
 
 class Statistics extends React.Component {
-  state = {
+  /*state = {
     good: 0,
     neutral: 0,
     bad: 0,
-    };
+    };*/
     render() {
         return (
             <div className='Statistics'>
