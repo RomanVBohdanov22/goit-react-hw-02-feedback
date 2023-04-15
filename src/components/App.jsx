@@ -11,8 +11,25 @@ export class App extends Component {
     bad: 0,
   };
 
-  handleChange = evt => {
+  handleGood = evt => {
+    console.log(`Good clicked ${evt}}`);
     this.setState({
+      good: 1
+      /*inputValue: evt.target.value }*/
+    });
+  };
+  handleNeutral = evt => {
+    console.log(`Neutral clicked ${evt}}`);
+    this.setState({ 
+      neutral: 1
+      /*inputValue: evt.target.value }*/
+    });
+  };
+
+  handleBad = evt => {
+    console.log(`Bad clicked ${evt}}`);
+    this.setState({
+      bad: 1
       /*inputValue: evt.target.value }*/
     });
   };
@@ -34,7 +51,7 @@ export class App extends Component {
           color: '#010101',
         }}
       >
-        {' '}
+        
         goit-react-hw-02-feedback
         <div className="Statistics">
           <div className="Feeback">
