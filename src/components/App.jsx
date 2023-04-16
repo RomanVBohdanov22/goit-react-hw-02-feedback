@@ -20,7 +20,7 @@ export class App extends Component {
       this.state.neutral === 0
     )
       return 0;
-    return (this.state.good / this.countTotalFeedback()) * 100;
+    return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
 
   onLeaveFeedback = opt => {
