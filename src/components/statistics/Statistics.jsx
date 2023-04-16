@@ -3,12 +3,12 @@ import '../statistics/Statistics.css';
 
 const Statistics = ({ good, bad, neutral, total, positivePercentage}) => {
   return (
-        <div className="Statistics">
+        <div className="statistics">
             <h2>Statistics</h2>
-            <p>Good: {good};</p>
-            <p>Neutral: {neutral};</p>
-            <p>Bad: {bad};</p>
-            <p>Total: {total};</p>
+            <p>Good: {good}</p>
+            <p>Neutral: {neutral}</p>
+            <p>Bad: {bad}</p>
+            <p>Total: {total}</p>
             <p>Positive: {positivePercentage}%</p>
           </div>
   );

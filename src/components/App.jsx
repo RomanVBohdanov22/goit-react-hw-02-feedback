@@ -57,8 +57,8 @@ state = {
         }}
       >
         goit-react-hw-02-feedback
-        <div className="Statistics">
-          <div className="Feeback">
+        <div>
+          <div className="feeback">
             <h2>Please leave feedback</h2>
             <button type="button" onClick={this.handleGood}>
               Good
