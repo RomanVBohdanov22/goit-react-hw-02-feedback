@@ -15,3 +15,10 @@
 .feedback button:hover {
   background-color: aquamarine;
 }
+.feedback button:focus {
+  border-color: aqua;
+}
+.feedback button:active {
+  background-color: gold;
+  border-color: coral;
+}
