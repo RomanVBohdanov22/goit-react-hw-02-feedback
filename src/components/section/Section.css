@@ -1,0 +1,6 @@
+.section h2 {
+  text-decoration: wavy;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
