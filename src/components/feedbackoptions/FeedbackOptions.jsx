@@ -4,8 +4,7 @@ import '../feedbackoptions/FeedbackOptions.css';
 //FeedbackOptions
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-    return (<div className="feedback">
-        <h2>Please leave feedback</h2>
+    return (<div className="feedback">        
         {
             options.map((option) => {
     return (
@@ -20,32 +19,8 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 export default FeedbackOptions;
 
 
-/*
+FeedbackOptions.propTypes= { 
+    options: PropTypes.array.isRequired,
+    onLeaveFeedback: PropTypes.func.isRequired,
+};
 
-options.map((option) => {
-    return (
-      <button
-        type="button"
-        name="option"
-        key={option}
-        onClick={() => onLeaveFeedback(option)}
-      >
-        {option}
-      </button>
-    );
-  });
-*/
-/*
-<div className="feedback">
-              <h2>Please leave feedback</h2>
-              <button type="button" onClick={this.handleGood}>
-                Good
-              </button>
-              <button type="button" onClick={this.handleNeutral}>
-                Neutral
-              </button>
-              <button type="button" onClick={this.handleBad}>
-                Bad
-              </button>
-            </div>
-*/

@@ -1,0 +1,13 @@
+.feedback {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.feedback button {
+  width: 32%;
+  height: auto;
+  font-weight: 700;
+  font-size: larger;
+  padding: 8px;
+}

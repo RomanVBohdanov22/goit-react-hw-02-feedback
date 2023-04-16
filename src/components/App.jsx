@@ -66,9 +66,9 @@ state = {
       >
         goit-react-hw-02-feedback
         <div>
-
+          <h2>Please leave feedback</h2>
           <FeedbackOptions options={["good", "neutral", "bad"]} onLeaveFeedback={this.onLeaveFeedback}/>
-
+          <h2>Statistics</h2>
           <Statistics good={good} neutral={neutral} bad={bad} total={countTotalFeedback()} positivePercentage={countPositiveFeedbackPercentage()}/>
         </div>
       </div>

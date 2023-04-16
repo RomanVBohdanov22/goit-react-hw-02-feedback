@@ -4,7 +4,7 @@ import '../statistics/Statistics.css';
 const Statistics = ({ good, bad, neutral, total, positivePercentage}) => {
   return (
         <div className="statistics">
-            <h2>Statistics</h2>
+
             <p><span>Good:</span> {good}</p>
             <p><span>Neutral:</span> {neutral}</p>
             <p><span>Bad:</span> {bad}</p>
