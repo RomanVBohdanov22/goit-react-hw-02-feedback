@@ -1,18 +1,25 @@
-import React from 'react';
+import PropTypes from 'prop-types';
+import '../statistics/Statistics.css';
 
-class Statistics extends React.Component {
-  /*state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
-    };*/
-    render() {
-        return (
-            <div className='Statistics'>
-                <h2 className='Please'>Please leave feedback</h2>
+const Statistics = ({ good, bad, neutral, total, positivePercentage}) => {
+  return (
+        <div className="Statistics">
+            <h2>Statistics</h2>
+            <p>Good: {good};</p>
+            <p>Neutral: {neutral};</p>
+            <p>Bad: {bad};</p>
+            <p>Total: {total};</p>
+            <p>Positive: {positivePercentage}%</p>
+          </div>
+  );
+};
 
+export default Statistics;
 
-            </div>
-        );
-    }
-}
+Statistics.propTypes= {
+    good: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired,
+    positivePercentage: PropTypes.number.isRequired,
+};

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Statistics from './statistics';
 
 export class App extends Component {
 
@@ -7,30 +8,26 @@ state = {
     neutral: 0,
     bad: 0,
   }
-  total = () => {     
+  countTotalFeedback = () => {     
     return this.state.good + this.state.bad + this.state.neutral;
   };
 
-  positive = () => {
+  countPositiveFeedbackPercentage = () => {
     if ((this.state.good===0) && (this.state.bad===0) && (this.state.neutral===0)) return 0;
-    return (this.state.good / this.total())*100;
+    return (this.state.good / this.countTotalFeedback())*100;
   };
 
   handleGood = evt => {
     this.setState(prevState => {
       return {
         good: prevState.good + 1,
-        neutral: prevState.neutral,
-        bad: prevState.bad,
       }
     });
   };
   handleNeutral = evt => {
     this.setState(prevState => {
       return {
-        good: prevState.good,
         neutral: prevState.neutral + 1,
-        bad: prevState.bad,
       }
     });
   };
@@ -38,8 +35,6 @@ state = {
   handleBad = evt => {
     this.setState(prevState => {
       return {
-        good: prevState.good,
-        neutral: prevState.neutral,
         bad: prevState.bad + 1,
       }
     });
@@ -47,7 +42,7 @@ state = {
 
   render() {
     const { good, neutral, bad } = this.state;
-
+    const { countTotalFeedback, countPositiveFeedbackPercentage} = this;
     return (
       <div
         style={{
@@ -75,16 +70,11 @@ state = {
               Bad
             </button>
           </div>
-          <div className="Statistics">
-            <h2>Statistics</h2>
-            <span>Good: {good};</span>
-            <span>Neutral: {neutral};</span>
-            <span>Bad: {bad};</span>
-            <span>Total: {this.total()};</span>
-            <span>Positive: {this.positive()}</span>
-          </div>
+
+          <Statistics good={good} neutral={neutral} bad={bad} total={countTotalFeedback()} positivePercentage={countPositiveFeedbackPercentage()}/>
         </div>
       </div>
     );
   }
 }
+//
