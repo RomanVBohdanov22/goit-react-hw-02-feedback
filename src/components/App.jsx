@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Statistics from './statistics';
-
+import FeedbackOptions from './feedbackoptions';
 export class App extends Component {
 
 state = {
@@ -58,18 +58,19 @@ state = {
       >
         goit-react-hw-02-feedback
         <div>
-          <div className="feeback">
-            <h2>Please leave feedback</h2>
-            <button type="button" onClick={this.handleGood}>
-              Good
-            </button>
-            <button type="button" onClick={this.handleNeutral}>
-              Neutral
-            </button>
-            <button type="button" onClick={this.handleBad}>
-              Bad
-            </button>
-          </div>
+          {/*
+            <div className="feeback">
+              <h2>Please leave feedback</h2>
+              <button type="button" onClick={this.handleGood}>
+                Good
+              </button>
+              <button type="button" onClick={this.handleNeutral}>
+                Neutral
+              </button>
+              <button type="button" onClick={this.handleBad}>
+                Bad
+              </button>
+              </div> */}
 
           <Statistics good={good} neutral={neutral} bad={bad} total={countTotalFeedback()} positivePercentage={countPositiveFeedbackPercentage()}/>
         </div>
@@ -77,4 +78,21 @@ state = {
     );
   }
 }
+
+//<FeedbackOptions  onLeaveFeedback={this.handleIncrement} options={Object.keys(this.state)}/>
 //<FeedbackOptions options={} onLeaveFeedback={}>.
+
+/*
+options.map((option) => {
+    return (
+      <button
+        type="button"
+        name="option"
+        key={option}
+        onClick={() => onLeaveFeedback(option)}
+      >
+        {option}
+      </button>
+    );
+  });
+*/
