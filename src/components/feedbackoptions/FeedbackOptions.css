@@ -10,4 +10,8 @@
   font-weight: 700;
   font-size: larger;
   padding: 8px;
+  border-radius: 15%;
+}
+.feedback button:hover {
+  background-color: aquamarine;
 }

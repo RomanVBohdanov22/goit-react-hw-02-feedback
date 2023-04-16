@@ -72,23 +72,3 @@ export class App extends Component {
     );
   }
 }
-
-//<Notification message={"There is no feedback"}/>
-
-//<FeedbackOptions  onLeaveFeedback={this.handleIncrement} options={Object.keys(this.state)}/>
-//<FeedbackOptions options={} onLeaveFeedback={}>.
-
-/*
-options.map((option) => {
-    return (
-      <button
-        type="button"
-        name="option"
-        key={option}
-        onClick={() => onLeaveFeedback(option)}
-      >
-        {option}
-      </button>
-    );
-  });
-*/
