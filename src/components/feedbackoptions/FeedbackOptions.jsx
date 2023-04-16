@@ -3,10 +3,19 @@ import '../feedbackoptions/FeedbackOptions.css';
 
 //FeedbackOptions
 
-const FeedbackOptions = ({ }) => {
-    return ({
-    
-}); };
+const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+    return (<div className="feedback">
+        <h2>Please leave feedback</h2>
+        {
+            options.map((option) => {
+    return (
+      <button type="button" name="option" key={option} onClick={() => onLeaveFeedback(`${option}`)}>
+        {option}
+      </button>
+    ); })
+        }
+    </div>);
+};
 
 export default FeedbackOptions;
 
@@ -27,7 +36,7 @@ options.map((option) => {
   });
 */
 /*
-<div className="feeback">
+<div className="feedback">
               <h2>Please leave feedback</h2>
               <button type="button" onClick={this.handleGood}>
                 Good

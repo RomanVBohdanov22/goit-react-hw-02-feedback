@@ -17,6 +17,14 @@ state = {
     return (this.state.good / this.countTotalFeedback())*100;
   };
 
+  onLeaveFeedback = opt => { 
+    this.setState(
+      prevState => ({
+        [opt]: prevState[opt] +1,
+      })
+    );
+  };
+  /*
   handleGood = evt => {
     this.setState(prevState => {
       return {
@@ -38,7 +46,7 @@ state = {
         bad: prevState.bad + 1,
       }
     });
-  };
+  };*/
 
   render() {
     const { good, neutral, bad } = this.state;
@@ -58,19 +66,8 @@ state = {
       >
         goit-react-hw-02-feedback
         <div>
-          {/*
-            <div className="feeback">
-              <h2>Please leave feedback</h2>
-              <button type="button" onClick={this.handleGood}>
-                Good
-              </button>
-              <button type="button" onClick={this.handleNeutral}>
-                Neutral
-              </button>
-              <button type="button" onClick={this.handleBad}>
-                Bad
-              </button>
-              </div> */}
+
+          <FeedbackOptions options={["good", "neutral", "bad"]} onLeaveFeedback={this.onLeaveFeedback}/>
 
           <Statistics good={good} neutral={neutral} bad={bad} total={countTotalFeedback()} positivePercentage={countPositiveFeedbackPercentage()}/>
         </div>
