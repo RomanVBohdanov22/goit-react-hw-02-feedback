@@ -1,22 +1,6 @@
 import React, { Component } from 'react';
 
 export class App extends Component {
-  /*static defaultProps = {
-    step: 1,
-  };*/
- /*
-  constructor() { 
-  super();
-  this.state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
-  };
-    this.handleGood = this.handleGood.bind(this);
-    this.handleBad = this.handleBad.bind(this);
-    this.handleNeutral = this.handleNeutral.bind(this);
-  }
-*/
 
 state = {
     good: 0,
@@ -24,17 +8,15 @@ state = {
     bad: 0,
   }
   total = () => {     
-    return this.state.good + this.state.neutral + this.state.bad;
+    return this.state.good + this.state.bad + this.state.neutral;
   };
 
   positive = () => {
+    if ((this.state.good===0) && (this.state.bad===0) && (this.state.neutral===0)) return 0;
     return (this.state.good / this.total())*100;
   };
 
   handleGood = evt => {
-    /*const { target } = evt;
-    console.log(`Good clicked ${evt}}`, target);
-    console.log(this);*/
     this.setState(prevState => {
       return {
         good: prevState.good + 1,
@@ -44,9 +26,6 @@ state = {
     });
   };
   handleNeutral = evt => {
-    /* const { target } = evt;
-    console.log(`Neutral clicked ${evt}}`, target);
-    console.log(this);*/
     this.setState(prevState => {
       return {
         good: prevState.good,
@@ -57,9 +36,6 @@ state = {
   };
 
   handleBad = evt => {
-    /*const { target } = evt;
-    console.log(`Bad clicked ${evt}}`, evt.target);
-    console.log(this);*/
     this.setState(prevState => {
       return {
         good: prevState.good,
@@ -71,7 +47,6 @@ state = {
 
   render() {
     const { good, neutral, bad } = this.state;
-    //const { step } = this.props;
 
     return (
       <div
