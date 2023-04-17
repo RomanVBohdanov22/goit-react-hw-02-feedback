@@ -10,17 +10,13 @@ export class App extends Component {
     bad: 0,
   };
   countTotalFeedback = () => {
-    return this.state.good + this.state.bad + this.state.neutral;
+    const { good, bad, neutral} = this.state;
+    return good + bad + neutral;
   };
 
   countPositiveFeedbackPercentage = () => {
-    if (
-      this.state.good === 0 &&
-      this.state.bad === 0 &&
-      this.state.neutral === 0
-    )
-      return 0;
-    return Math.round((this.state.good / this.countTotalFeedback()) * 100);
+    const { good} = this.state; 
+    return (Math.round((good / this.countTotalFeedback()) * 100))||0;
   };
 
   onLeaveFeedback = opt => {
@@ -32,6 +28,8 @@ export class App extends Component {
   render() {
     const { good, neutral, bad } = this.state;
     const { countTotalFeedback, countPositiveFeedbackPercentage } = this;
+    const totFeedBack = countTotalFeedback();
+    const posPersentage = countPositiveFeedbackPercentage();
     return (
       <div
         style={{
@@ -48,18 +46,18 @@ export class App extends Component {
         <div>
           <Section title="Please leave feedback">
           <FeedbackOptions
-            options={['good', 'neutral', 'bad']}
+            options={Object.keys(this.state)}//['good', 'neutral', 'bad']
             onLeaveFeedback={this.onLeaveFeedback}
             />
           </Section>
           <Section title="Statistics">
-          {good || bad || neutral ? (
+          {totFeedBack ? (
             <Statistics
               good={good}
               neutral={neutral}
               bad={bad}
-              total={countTotalFeedback()}
-              positivePercentage={countPositiveFeedbackPercentage()}
+              total={totFeedBack}
+              positivePercentage={posPersentage}
             />
           ) : (
                 <>
